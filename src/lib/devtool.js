@@ -122,7 +122,8 @@ exports.start = function (target, config, cb) {
     startPath += 4;
     builder.build(filePath, path.join(__dirname, '../../frontend/weex'), {
       watch: true,
-      devtool: 'inline-source-map'
+      devtool: 'inline-source-map',
+      externalWebpack: config.externalWebpack
     }, (err, output, json) => {
       if (err) {
         logger.error(err);

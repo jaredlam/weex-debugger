@@ -32,7 +32,8 @@ program
 .option('--telemetry', 'upload usage data to help us improve the toolkit')
 .option('--verbose', 'display all logs of debugger server')
 .option('--loglevel [loglevel]', 'set log level silent|error|warn|info|log|debug', 'error')
-.option('--remotedebugport [remotedebugport]', 'set the remote debug port', config.remoteDebugPort);
+.option('--remotedebugport [remotedebugport]', 'set the remote debug port', config.remoteDebugPort)
+.option('-x,--external-webpack', 'use webpack.config.js in project as webpack configuration file');
 
 
 // Supporting add the file / directory parameter after the command.
@@ -93,6 +94,7 @@ env.getVersionOf('node', (v) => {
 config.ip = program.host || ip.address();
 config.manual = program.manual;
 config.min = program.min;
+config.externalWebpack = program.externalWebpack;
 
 process.on('uncaughtException', (err) => {
   try {

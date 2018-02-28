@@ -95,11 +95,8 @@ env.getVersionOf('node', (v) => {
 config.ip = program.host || ip.address();
 config.manual = program.manual;
 config.min = program.min;
-<<<<<<< HEAD
 config.externalWebpack = program.externalWebpack;
-=======
 config.ext = program.ext || 'vue';
->>>>>>> ed863b
 
 process.on('uncaughtException', (err) => {
   try {
